@@ -13,13 +13,21 @@ export class AddTask extends Component {
         checkedImportantValue: false,
     }
 
-    addTask = () => {
-        console.log('add task')
+    addTaskHandler = () => {
+        console.log(this.props)
+        const add = this.props.add(this.state.inputTaskValue, this.state.inputDateValue, this.state.checkedImportantValue)
+        if (add) {
+            this.setState({
+                inputTaskValue: '',
+                checkedImportantValue: false,
+                inputDateValue: this.getCurrentDate()
+            })
+        }
     }
 
     onFormSubmit = e => {
         e.preventDefault();
-        this.addTask();
+        this.addTaskHandler();
     }
 
     onInputTextChange = e => {
@@ -47,7 +55,7 @@ export class AddTask extends Component {
                     <label htmlFor="important">is important?</label>
                     <input
                         type="checkbox"
-                        checked={this.state.checked}
+                        checked={this.state.checkedImportantValue}
                         onChange={this.onImportantChange}
                         id='important'
                     />
@@ -61,7 +69,7 @@ export class AddTask extends Component {
                         onChange={e => this.setState({ inputDateValue: e.target.value })}
                     />
                 </form>
-                <button onClick={() => this.addTask()}>add task</button>
+                <button onClick={() => this.addTaskHandler()}>add task</button>
             </div>
         )
     }

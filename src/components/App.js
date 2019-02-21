@@ -18,12 +18,26 @@ class App extends Component {
     ],
   }
 
+  addTask = (content, date, important) => {
+    const task = {
+      id: this.state.tasks.length + 1,
+      content,
+      date,
+      important,
+      active: true,
+      type: 'home'
+    }
+    this.setState({ tasks: [...this.state.tasks, task] })
+    console.log(task)
+    return true
+  }
+
   render() {
     return (
       <div className="App">
         <Layout>
         </Layout>
-        <AddTask />
+        <AddTask add={this.addTask} />
         <div className="section">
           <TaskList tasks={this.state.tasks} />
         </div>
