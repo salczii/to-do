@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
 import './App.css';
-import Layout from './Layout/Layout'
+import Layout from './Layout/Layout';
+import TaskList from './TaskList';
+import AddTask from './AddTask';
 
 class App extends Component {
   state = {
-    inputValue: '',
-  }
-
-  onFormSubmit = () => {
-
-  }
-
-  onInputChange = e => {
-    this.setState({ inputValue: e.target.value })
+    tasks: [
+      {
+        id: 0,
+        content: 'jakis tekst',
+        important: true,
+        type: 'home',
+        date: '2019-09-09',
+        active: true
+      }
+    ],
   }
 
   render() {
@@ -20,16 +23,9 @@ class App extends Component {
       <div className="App">
         <Layout>
         </Layout>
+        <AddTask />
         <div className="section">
-          <form onSubmit={this.onFormSubmit}>
-            <input
-              onChange={this.onInputChange}
-              value={this.state.inputValue}
-              placeholder='write some text here...'
-              type='text' />
-            <button>type of task</button>
-          </form>
-
+          <TaskList tasks={this.state.tasks} />
         </div>
       </div>
     );
