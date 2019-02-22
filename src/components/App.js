@@ -32,13 +32,13 @@ class App extends Component {
     return (
       <div className="App">
         <Layout>
+          <AddTask add={this.addTask} />
+          <div className="section">
+            <TaskList
+              tasks={this.state.tasks}
+              remove={this.removeTask} />
+          </div>
         </Layout>
-        <AddTask add={this.addTask} />
-        <div className="section">
-          <TaskList
-            tasks={this.state.tasks}
-            remove={this.removeTask} />
-        </div>
       </div>
     );
   }
