@@ -11,16 +11,17 @@ export class AddTask extends Component {
         inputTaskValue: '',
         inputDateValue: this.getCurrentDate(),
         checkedImportantValue: false,
+        selectActiveValue: 'others'
     }
 
     addTaskHandler = () => {
-        console.log(this.props)
-        const add = this.props.add(this.state.inputTaskValue, this.state.inputDateValue, this.state.checkedImportantValue)
+        const add = this.props.add(this.state.inputTaskValue, this.state.inputDateValue, this.state.checkedImportantValue, this.state.selectActiveValue)
         if (add) {
             this.setState({
                 inputTaskValue: '',
                 checkedImportantValue: false,
-                inputDateValue: this.getCurrentDate()
+                inputDateValue: this.getCurrentDate(),
+                selectActiveValue: 'others'
             })
         }
     }
@@ -38,6 +39,10 @@ export class AddTask extends Component {
         this.setState(prevState => ({
             checkedImportantValue: !prevState.checkedImportantValue
         }));
+    }
+
+    onSelectChange = e => {
+        this.setState({ selectActiveValue: e.target.value })
     }
 
     render() {
@@ -68,6 +73,13 @@ export class AddTask extends Component {
                         max={maxDate}
                         onChange={e => this.setState({ inputDateValue: e.target.value })}
                     />
+                    <select onChange={this.onSelectChange} value={this.state.selectActiveValue}>
+                        <option value="home">home</option>
+                        <option value="work">work</option>
+                        <option value="hobby">hobby</option>
+                        <option value="school">school</option>
+                        <option value="others">others</option>
+                    </select>
                 </form>
                 <button onClick={() => this.addTaskHandler()}>add task</button>
             </div>

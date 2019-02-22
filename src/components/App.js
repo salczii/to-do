@@ -6,30 +6,26 @@ import AddTask from './AddTask';
 
 class App extends Component {
   state = {
-    tasks: [
-      {
-        id: 0,
-        content: 'jakis tekst',
-        important: true,
-        type: 'home',
-        date: '2019-09-09',
-        active: true
-      }
-    ],
+    tasks: []
   }
 
-  addTask = (content, date, important) => {
+  addTask = (content, date, important, type) => {
     const task = {
-      id: this.state.tasks.length + 1,
+      id: this.state.tasks.length,
       content,
       date,
       important,
       active: true,
-      type: 'home'
+      type
     }
     this.setState({ tasks: [...this.state.tasks, task] })
-    console.log(task)
     return true
+  }
+
+  removeTask = id => {
+    let tasks = [...this.state.tasks]
+    tasks = tasks.filter(task => task.id !== id)
+    this.setState({ tasks })
   }
 
   render() {
@@ -39,7 +35,9 @@ class App extends Component {
         </Layout>
         <AddTask add={this.addTask} />
         <div className="section">
-          <TaskList tasks={this.state.tasks} />
+          <TaskList
+            tasks={this.state.tasks}
+            remove={this.removeTask} />
         </div>
       </div>
     );
