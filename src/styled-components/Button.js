@@ -6,7 +6,7 @@ const Button = styled.button`
     width: 150px;
     height: 40px;
     cursor: pointer;
-    color: pink;
+    color: rgb(226, 152, 165);
     transition: .5s;
     ${props => props.login && css`
         border:2px solid white;
