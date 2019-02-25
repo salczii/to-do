@@ -73,6 +73,7 @@ export class AddTask extends Component {
                         max={maxDate}
                         onChange={e => this.setState({ inputDateValue: e.target.value })}
                     />
+
                     <select onChange={this.onSelectChange} value={this.state.selectActiveValue}>
                         <option value="home">home</option>
                         <option value="work">work</option>

@@ -1,6 +1,14 @@
 import React from 'react';
 import Task from './Task';
 
+const colors = {
+    home: 'lightblue',
+    school: 'lightgreen',
+    work: 'lightgray',
+    hobby: 'lightyellow',
+    others: 'darkgray'
+}
+
 const TaskList = ({ tasks, remove }) => {
 
     let homeTasks = tasks
@@ -10,7 +18,7 @@ const TaskList = ({ tasks, remove }) => {
                 key={task.id}
                 task={task}
                 remove={remove}
-                type={task.type} />
+                color={colors[task.type]} />
         ))
     let schoolTasks = tasks
         .filter(task => task.type === 'school')
@@ -19,7 +27,7 @@ const TaskList = ({ tasks, remove }) => {
                 key={task.id}
                 task={task}
                 remove={remove}
-                type={task.type} />
+                color={colors[task.type]} />
         ))
     let workTasks = tasks
         .filter(task => task.type === 'work')
@@ -28,7 +36,7 @@ const TaskList = ({ tasks, remove }) => {
                 key={task.id}
                 task={task}
                 remove={remove}
-                type={task.type} />
+                color={colors[task.type]} />
         ))
     let hobbyTasks = tasks
         .filter(task => task.type === 'hobby')
@@ -37,7 +45,7 @@ const TaskList = ({ tasks, remove }) => {
                 key={task.id}
                 task={task}
                 remove={remove}
-                type={task.type} />
+                color={colors[task.type]} />
         ))
 
     let others = tasks
@@ -47,7 +55,7 @@ const TaskList = ({ tasks, remove }) => {
                 key={task.id}
                 task={task}
                 remove={remove}
-                type={task.type} />
+                color={colors[task.type]} />
         ))
 
     return (

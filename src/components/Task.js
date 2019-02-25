@@ -1,24 +1,17 @@
 import React from 'react'
 
-import styled, {css} from 'styled-components';
+import TaskElement from '../styled-components/TaskElement'
+import RemoveButton from '../styled-components/RemoveButton'
 
-const ControlTaskElement = styled.div`
-    display: flex;
-    justify-content: center;
-    ${props=>props.important && css`
-    color: red;
-    `}
-`
-
-const Task = ({ task, remove }) => {
+const Task = ({ task, remove, color }) => {
 
     return (
-        <ControlTaskElement important={task.important}>
+        <TaskElement important={task.important} color={color}>
             <p>{task.content}</p>
             <p>{task.date}</p>
             <p>{task.type}</p>
-            <button onClick={() => remove(task.id)}>-</button>
-        </ControlTaskElement>
+            <RemoveButton onClick={() => remove(task.id)}>-</RemoveButton>
+        </TaskElement>
     )
 }
 

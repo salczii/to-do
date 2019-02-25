@@ -1,0 +1,51 @@
+:root {
+    --primary-color: rgb(252, 249, 249);
+    --font-stack: "Montserrat", sans-serif;
+    --light-grey: rgb(224, 224, 224);
+    --light-grey2: #f4f2f2;
+    --grey: rgb(221, 217, 217);
+    --dark-grey: rgb(92, 89, 89);
+    --extra-dark-grey: rgb(51, 51, 51);
+    --slim: 300;
+    --normal: 400;
+    --bold: 600;
+    --extra-bold: 800;
+    --icons-size-mobile: 13vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 50%;
+    box-sizing: border-box;
+
+    @include respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include respond(desktop) {
+        font-size: 75%;
+    }
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: var(--font-stack);
+    font-weight: var(--normal);
+    line-height: 1.6;
+    min-height: 100vh;
+    // overflow: hidden;
+}
