@@ -110,14 +110,14 @@ class TaskManagment extends React.Component {
 
     render() {
         return (
-            <div>
+            <>
                 <AddTask add={this.addTask} />
                 <div className="section">
                     <TaskList
                         tasks={this.state.tasks}
                         remove={this.removeTask} />
                 </div>
-            </div>
+            </>
         )
     }
 }

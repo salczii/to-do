@@ -10,6 +10,7 @@
     padding: 0 1rem;
     height: 12vh;
     background: #fff;
+    box-shadow: 0 0 55px -10px rgba(0, 0, 0, 0.75);
 
     &__login-btn {
         border: 2px solid rgb(175, 2, 2);
@@ -47,7 +48,7 @@
         &--image {
             height: 100%;
             width: 3rem;
-            background-image: linear-gradient(to bottom right, rgb(68, 189, 68), rgb(24, 121, 24));
+            background-image: linear-gradient(to bottom right, pink, rgb(226, 152, 165));
             border-radius: 2px;
             position: relative;
 
@@ -56,7 +57,7 @@
                 position: absolute;
                 top: -5%;
                 left: -5%;
-                background-image: linear-gradient(to bottom right, rgb(68, 189, 68), rgb(24, 121, 24));
+                background-image: linear-gradient(to bottom right, pink, rgb(226, 152, 165));
                 width: 110%;
                 height: 7px;
                 border-radius: 20px;
@@ -79,6 +80,7 @@
         flex-direction: column;
         justify-content: space-around;
         height: 3.5vh;
+        cursor: pointer;
 
         @include respond(desktop) {
             display: none;
@@ -97,6 +99,8 @@
     display: flex;
     justify-content: space-between;
     margin: 1rem 0;
+    color: pink;
+    font-size: 1.3rem;
 
     &__list {
         @include respond(desktop) {
@@ -110,6 +114,7 @@
 
         &--item {
             list-style: none;
+
         }
     }
 }
@@ -118,7 +123,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    flex: 0 0 30%;
+    flex: 0 0 50%;
     // background-color: red;
 
 
@@ -143,6 +148,7 @@
     &__button {
         border: none;
         background-color: transparent;
+        cursor: pointer;
 
         &:focus {
             outline: none;
@@ -152,4 +158,38 @@
             transform: translateY(2px)
         }
     }
+}
+
+.tasks_Wrapper {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 0 55px -10px rgba(0, 0, 0, 0.75);
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--dark-grey);
+}
+
+.tasks_Wrapper--element {
+    border-radius: 20px;
+    // border: 2px solid red;
+    margin: 2rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 20vh;
+    background-image: linear-gradient(to bottom right, pink, rgb(226, 152, 165));
 }

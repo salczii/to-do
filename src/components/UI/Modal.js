@@ -1,13 +1,14 @@
 import React from 'react'
 import Backdrop from './Backdrop'
+import ModalComponent from '../../styled-components/ModalComponent'
 
-const Modal = ({ children }) => {
+const Modal = ({ children, modalClosed, showModal }) => {
     return (
         <>
-            <Backdrop show={this.props.show} clicked={props.modalClosed} />
-            <div classname='modal'>
+            <Backdrop show={showModal} clicked={modalClosed} />
+            <ModalComponent show={showModal}>
                 {children}
-            </div>
+            </ModalComponent>
         </>
     )
 }

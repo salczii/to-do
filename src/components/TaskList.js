@@ -59,23 +59,28 @@ const TaskList = ({ tasks, remove }) => {
         ))
 
     return (
-        <div className='task_Wrapper'>
-            <div className="homeTask_Wrapper">
+        <section className='tasks_Wrapper'>
+            <div className="tasks_Wrapper--element">
+                <h1>Home tasks</h1>
                 {homeTasks}
             </div>
-            <div className="schoolTask_Wrapper">
+            <div className="tasks_Wrapper--element">
+                <h1>Home tasks</h1>
                 {schoolTasks}
             </div>
-            <div className="workTask_Wrapper">
+            <div className="tasks_Wrapper--element">
+                <h1>Home tasks</h1>
                 {workTasks}
             </div>
-            <div className="hobbyTask_Wrapper">
+            <div className="tasks_Wrapper--element">
+                <h1>Home tasks</h1>
                 {hobbyTasks}
             </div>
-            <div className="othersTask_Wrapper">
+            <div className="tasks_Wrapper--element">
+                <h1>other tasks</h1>
                 {others}
             </div>
-        </div>
+        </section>
     )
 }
 
