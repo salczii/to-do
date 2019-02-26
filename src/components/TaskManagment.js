@@ -1,6 +1,7 @@
 import React from 'react';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
+import SearchBar from '../components/Layout/Toolbar/SearchBar'
 
 class TaskManagment extends React.Component {
 
@@ -10,7 +11,7 @@ class TaskManagment extends React.Component {
                 id: 0,
                 conten: 'ssasasas',
                 date: '2019-01-01',
-                important: true,
+                important: false,
                 active: true,
                 type: 'home'
             },
@@ -34,7 +35,7 @@ class TaskManagment extends React.Component {
                 id: 3,
                 conten: 'ssasasas',
                 date: '2019-01-01',
-                important: true,
+                important: false,
                 active: true,
                 type: 'home'
             },
@@ -42,7 +43,7 @@ class TaskManagment extends React.Component {
                 id: 4,
                 conten: 'ssasasas',
                 date: '2019-01-01',
-                important: true,
+                important: false,
                 active: true,
                 type: 'home'
             },
@@ -66,7 +67,7 @@ class TaskManagment extends React.Component {
                 id: 7,
                 conten: 'ssasasas',
                 date: '2019-01-01',
-                important: true,
+                important: false,
                 active: true,
                 type: 'others'
             },
@@ -82,7 +83,7 @@ class TaskManagment extends React.Component {
                 id: 9,
                 conten: 'ssasasas',
                 date: '2019-01-01',
-                important: true,
+                important: false,
                 active: true,
                 type: 'work'
             }
@@ -113,6 +114,7 @@ class TaskManagment extends React.Component {
             <>
                 <AddTask add={this.addTask} />
                 <div className="section">
+                    {/* <SearchBar /> */}
                     <TaskList
                         tasks={this.state.tasks}
                         remove={this.removeTask} />

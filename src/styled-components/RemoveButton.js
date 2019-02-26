@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 const RemoveButton = styled.button`
 background: transparent;
-border: 1px solid white;
-border-radius: 2px;
+border:none;
 cursor: pointer;
 line-height: 1rem;
 height: 2rem;
 width: 2rem;
-color: white;
+outline: none;
 `
 
 export default RemoveButton

@@ -12,6 +12,7 @@ const TaskElement = styled.div`
     ${props => props.important && css`
     color: white;
     background: ${props => props.color && 'pink'};
+    border: 1px solid red;
     `}
 `
 
