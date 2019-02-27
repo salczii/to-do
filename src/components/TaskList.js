@@ -1,5 +1,6 @@
 import React from 'react';
 import Task from './Task';
+import SearchBar from '../components/Layout/Toolbar/SearchBar'
 
 const colors = {
     home: 'lightblue',
@@ -60,6 +61,7 @@ const TaskList = ({ tasks, remove }) => {
 
     return (
         <section className='tasks_Wrapper'>
+            <SearchBar />
             <div className="tasks_Wrapper--element">
                 <h1>Home tasks</h1>
                 {homeTasks}
