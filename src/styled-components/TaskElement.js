@@ -9,7 +9,7 @@ const TaskElement = styled.div`
     width: 80%;
     margin: 2rem 0;
     background: #ddd;
-    ${props => props.important && css`
+    ${props => props.important === 'true' && css`
     color: white;
     background: ${props => props.color && 'pink'};
     border: 1px solid red;

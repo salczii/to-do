@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Backdrop from '../UI/Backdrop';
-import Nav from '../Layout/Toolbar/Nav';
+import { Nav } from '../Layout/Toolbar/Nav';
 import SideDrawerDiv from '../../styled-components/SideDrawerDiv'
 
 const sideDrawer = ({ open, closed }) => {

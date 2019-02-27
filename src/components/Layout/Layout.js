@@ -1,6 +1,7 @@
 import React from 'react';
 import Toolbar from './Toolbar/Toolbar';
 import SideDrawer from './SideDrawer';
+import { AppProvider } from '../AppProvider'
 
 class Layout extends React.Component {
     state = {
@@ -20,12 +21,15 @@ class Layout extends React.Component {
     render() {
         return (
             <>
-                <SideDrawer
-                    open={this.state.showSideDrawer}
-                    closed={this.sideDrawerClosedHandler} />
-                <Toolbar
-                    drawerToggleClicked={this.sideDrawerToggleHandler} />
-                <main>{this.props.children}</main>
+                <AppProvider>
+                    <SideDrawer
+                        open={this.state.showSideDrawer}
+                        closed={this.sideDrawerClosedHandler} />
+                    <Toolbar
+                        drawerToggleClicked={this.sideDrawerToggleHandler} />
+                    <main>{this.props.children}</main>
+                </AppProvider>
+
             </>
         )
     }
