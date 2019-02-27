@@ -1,7 +1,6 @@
 import React from 'react';
 import TaskList from './TaskList';
 import AddTask from './AddTask';
-import SearchBar from '../components/Layout/Toolbar/SearchBar'
 
 class TaskManagment extends React.Component {
 

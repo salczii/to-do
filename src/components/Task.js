@@ -3,6 +3,7 @@ import React from 'react'
 import TaskElement from '../styled-components/TaskElement'
 import RemoveButton from '../styled-components/RemoveButton'
 import TrashIcon from '../styled-components/TrashIcon'
+import AlarmIcon from '../styled-components/AlarmIcon';
 
 const Task = ({ task, remove, color }) => {
 
@@ -11,6 +12,7 @@ const Task = ({ task, remove, color }) => {
             <p>{task.content}</p>
             <p>{task.date}</p>
             <p>{task.type}</p>
+            <AlarmIcon important={task.important} />
             <RemoveButton onClick={() => remove(task.id)}><TrashIcon important={task.important} /></RemoveButton>
         </TaskElement>
     )
