@@ -4,9 +4,8 @@ const RemoveButton = styled.button`
 background: transparent;
 border:none;
 cursor: pointer;
-line-height: 1rem;
-height: 2rem;
-width: 2rem;
+width: 1.4rem;
+height: 1.4rem;
 outline: none;
 `
 

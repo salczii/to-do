@@ -8,25 +8,6 @@
   background: #fff;
   box-shadow: 0 0 55px -10px rgba(0, 0, 0, 0.75);
 
-  &__login-btn {
-    border: 2px solid rgb(175, 2, 2);
-    padding: 0.5rem 2rem;
-    cursor: pointer;
-    color: rgb(175, 2, 2);
-    border-radius: 2px;
-    position: relative;
-
-    & a {
-      color: rgb(17, 17, 17);
-      text-decoration: none;
-    }
-
-    &:hover {
-      border: 2px solid rgb(196, 40, 40);
-      outline: none;
-    }
-  }
-
   &__block {
     flex-grow: 1;
   }

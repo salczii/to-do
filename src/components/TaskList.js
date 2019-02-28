@@ -67,15 +67,15 @@ const TaskList = ({ tasks, remove }) => {
                 {homeTasks}
             </div>
             <div className="tasks_Wrapper--element">
-                <h1>Home tasks</h1>
+                <h1>School tasks</h1>
                 {schoolTasks}
             </div>
             <div className="tasks_Wrapper--element">
-                <h1>Home tasks</h1>
+                <h1>Work tasks</h1>
                 {workTasks}
             </div>
             <div className="tasks_Wrapper--element">
-                <h1>Home tasks</h1>
+                <h1>hobby tasks</h1>
                 {hobbyTasks}
             </div>
             <div className="tasks_Wrapper--element">
