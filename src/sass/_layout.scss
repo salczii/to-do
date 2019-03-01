@@ -169,3 +169,30 @@
   height: 20vh;
   background-image: linear-gradient(to bottom right, pink, rgb(226, 152, 165));
 }
+
+.login-section {
+  border-top: 2px solid grey;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  &__login-btn {
+    font-size: 1.8rem;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 1px 5px 0 #888;
+    cursor: pointer;
+    padding: .5rem;
+    margin-top: 1rem;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      background-color: #eee;
+      ;
+    }
+  }
+}

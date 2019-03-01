@@ -13,7 +13,8 @@ export class AppProvider extends React.Component {
             removeTask: this.removeTask,
             showModal: false,
             closeModal: this.closeModal,
-            openModal: this.openModal
+            openModal: this.openModal,
+            modalType: ''
         }
     }
     setPage = page => {
@@ -24,8 +25,11 @@ export class AppProvider extends React.Component {
         this.setState({ showModal: false })
     }
 
-    openModal = () => {
-        this.setState({ showModal: true })
+    openModal = type => {
+        this.setState({
+            showModal: true,
+            modalType: type
+        })
     }
 
     addTask = (content, date, important, type) => {

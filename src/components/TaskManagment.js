@@ -8,12 +8,13 @@ class TaskManagment extends React.Component {
         return (
             <>
                 <AppContext.Consumer>
-                    {({ addTask, removeTask, openModal, closeModal, showModal }) => <AddTask
+                    {({ addTask, removeTask, openModal, closeModal, showModal, modalType }) => <AddTask
                         add={addTask}
                         remove={removeTask}
                         open={openModal}
                         close={closeModal}
-                        show={showModal} />}
+                        show={showModal}
+                        type={modalType} />}
                 </AppContext.Consumer>
                 <div className="section">
                     <AppContext.Consumer>
