@@ -6,7 +6,8 @@ const Backdrop = styled.div`
     position: fixed;
     left: 0;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5);*/
+    background-color:rgba(15, 23, 40, .361);
 `
 
 export default Backdrop
