@@ -1,8 +1,11 @@
 import React from 'react';
 import Backdrop from '../../styled-components/Backdrop'
+import { AppContext } from '../AppProvider';
 
-const backdrop = ({ show, clicked }) => (
-    show && <Backdrop onClick={clicked}></Backdrop>
+const backdrop = () => (
+    <AppContext.Consumer>
+        {({ showModal, closeModal }) => showModal && <Backdrop onClick={closeModal}></Backdrop>}
+    </AppContext.Consumer>
 );
 
 export default backdrop;

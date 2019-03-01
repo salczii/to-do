@@ -1,38 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Modal from './UI/Modal';
 import Button from '../styled-components/Button';
 import Form from './UI/Form'
-class AddTask extends Component {
-    state = {
-        showModal: false
-    }
+import { AppContext } from './AppProvider';
 
-    createTaskHandler = () => {
-        this.setState({
-            showModal: true
-        })
-    }
-
-    closeModalHandler = () => {
-        this.setState({
-            showModal: false
-        })
-    }
-
-    render() {
-
-        return (
-            <div className='admin-section'>
-                <Button task onClick={this.createTaskHandler}>CREATE TASK</Button>
-                <Button login>SIGN IN</Button>
-                <Modal showModal={this.state.showModal} modalClosed={this.closeModalHandler}>
-                    <Form
-                        add={this.props.add}
-                        closeModal={this.closeModalHandler} />
-                </Modal>
-            </div>
-        )
-    }
+const AddTask = () => {
+    return (
+        <div className='admin-section'>
+            <AppContext.Consumer>
+                {({ openModal }) => <Button task onClick={openModal}>CREATE TASK</Button>}
+            </AppContext.Consumer>
+            <Button login>SIGN IN</Button>
+            <Modal>
+                <Form />
+            </Modal>
+        </div>
+    )
 }
 
 export default AddTask

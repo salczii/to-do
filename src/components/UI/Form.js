@@ -1,4 +1,5 @@
 import React from 'react'
+import { AppContext } from '../AppProvider';
 
 
 class Form extends React.Component {
@@ -13,24 +14,6 @@ class Form extends React.Component {
         inputDateValue: this.getCurrentDate(),
         checkedImportantValue: false,
         selectActiveValue: 'others',
-    }
-
-    addTaskHandler = () => {
-        const add = this.props.add(this.state.inputTaskValue, this.state.inputDateValue, this.state.checkedImportantValue, this.state.selectActiveValue)
-        if (add) {
-            this.setState({
-                inputTaskValue: '',
-                checkedImportantValue: false,
-                inputDateValue: this.getCurrentDate(),
-                selectActiveValue: 'others'
-            })
-        }
-        this.props.closeModal()
-    }
-
-    onFormSubmit = e => {
-        e.preventDefault();
-        this.addTaskHandler();
     }
 
     onInputTextChange = e => {
@@ -49,12 +32,14 @@ class Form extends React.Component {
 
     render() {
 
+        const { inputTaskValue, inputDateValue, checkedImportantValue, selectActiveValue } = this.state
+
         const maxDate = parseInt(this.getCurrentDate().slice(0, 4)) + 2 + this.getCurrentDate().slice(4, 10);
 
         return (
             <>
-                <form onSubmit={this.onFormSubmit}>
-                    <input
+                <form>
+                    < input
                         onChange={this.onInputTextChange}
                         value={this.state.inputTaskValue}
                         placeholder='add task'
@@ -84,7 +69,10 @@ class Form extends React.Component {
                         <option value="others">others</option>
                     </select>
                 </form>
-                <button onClick={() => this.addTaskHandler()}>add task</button>
+                <AppContext.Consumer>
+                    {({ addTask }) => <button onClick={() => addTask(inputTaskValue, inputDateValue, checkedImportantValue, selectActiveValue)}>add task</button>}
+                </AppContext.Consumer>
+
             </>
         )
     }

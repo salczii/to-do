@@ -5,7 +5,7 @@ const TaskElement = styled.div`
     justify-content: space-around;
     align-items: center;
     height: 10vh;
-    border-radius: 20px;
+    border-radius: 5px;
     width: 80%;
     margin: 2rem 0;
     background: #ddd;

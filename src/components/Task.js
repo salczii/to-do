@@ -4,16 +4,27 @@ import TaskElement from '../styled-components/TaskElement'
 import RemoveButton from '../styled-components/RemoveButton'
 import TrashIcon from '../styled-components/TrashIcon'
 import AlarmIcon from '../styled-components/AlarmIcon';
+import { AppContext } from './AppProvider';
 
 const Task = ({ task, remove, color }) => {
 
+    let content = null
+    task.content.length > 20 ? content = task.content.slice(0, 20) + '...' : content = task.content
+
+    console.log(task.id)
+
+
     return (
         <TaskElement important={task.important.toString()} color={color}>
-            <p>{task.content}</p>
+            <p>{content}</p>
             <p>{task.date}</p>
             <p>{task.type}</p>
             <AlarmIcon important={task.important.toString()} />
-            <RemoveButton onClick={() => remove(task.id)}><TrashIcon important={task.important.toString()} /></RemoveButton>
+            <AppContext.Consumer>
+                {({ removeTask }) =>
+                    <RemoveButton onClick={() => removeTask(task.id)}><TrashIcon important={task.important.toString()} /></RemoveButton>}
+            </AppContext.Consumer>
+
         </TaskElement>
     )
 }

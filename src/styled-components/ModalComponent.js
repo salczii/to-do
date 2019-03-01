@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+
 const ModalComponent = styled.div`
 display:flex;
 flex-direction: column;
