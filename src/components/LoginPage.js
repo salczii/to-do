@@ -9,7 +9,7 @@ const LoginPage = () => {
     return (
         <LoginPageStyle>
             <span className="login-section--cross"></span>
-            <H3>zaloguj sie na swoje konto!</H3>
+            <H3>Login to your account!</H3>
             <div className="login-section">
                 <div className="login-section__login-iconWrapper"><PersonIcon /></div>
                 <p>hello user!</p>

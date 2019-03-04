@@ -11,25 +11,25 @@ export class AppProvider extends React.Component {
             tasks: [],
             addTask: this.addTask,
             removeTask: this.removeTask,
-            showModal: false,
-            closeModal: this.closeModal,
-            openModal: this.openModal,
-            modalType: ''
+            showSpinner: false,
+            getTasks: this.getTasks,
+            darkTheme: false,
+            setTheme: this.setTheme
         }
     }
+
     setPage = page => {
         this.setState({ page })
     }
 
-    closeModal = () => {
-        this.setState({ showModal: false })
-    }
+    setTheme = () => {
+        this.setState(prevState => ({
+            darkTheme: !prevState.darkTheme
+        }));
+    };
 
-    openModal = type => {
-        this.setState({
-            showModal: true,
-            modalType: type
-        })
+    getTasks = tasks => {
+        this.setState({ tasks })
     }
 
     addTask = (content, date, important, type) => {
@@ -41,7 +41,6 @@ export class AppProvider extends React.Component {
             active: true,
             type
         }
-        this.closeModal()
         this.setState({ tasks: [...this.state.tasks, task] })
     }
 

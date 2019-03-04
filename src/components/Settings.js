@@ -1,11 +1,15 @@
 import React from 'react'
+import Span from '../styled-components/Span'
+import { withAppContext } from './withAppContext'
 
-const Settings = () => {
+const Settings = ({ context: { setTheme, darkTheme } }) => {
+    console.log(darkTheme)
     return (
-        <div>
-            settings
-     </div>
+        <section className='settings'>
+            <p>set theme</p>
+            <Span onClick={setTheme} theme={darkTheme.toString()}></Span>
+        </section>
     )
 }
 
-export default Settings
+export default withAppContext(Settings)

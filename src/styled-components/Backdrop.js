@@ -1,13 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const Backdrop = styled.div`
-    width: 100%;
+    /* display: ${props => props.withError ? 'none' : 'block'}; */
+    width: 150%;
     height: 100%;
-    position: fixed;
+    position: absolute;
     left: 0;
     top: 0;
-    /* background-color: rgba(0, 0, 0, 0.5);*/
     background-color:rgba(15, 23, 40, .361);
+    ${props => props.withError && css`
+    transform:scale(8)
+    `}
 `
 
 export default Backdrop

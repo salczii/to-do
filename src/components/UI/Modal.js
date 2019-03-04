@@ -1,20 +1,21 @@
 import React from 'react'
 import Backdrop from './Backdrop'
 import ModalComponent from '../../styled-components/ModalComponent'
-import { AppContext } from '../AppProvider';
 
-const Modal = ({ children }) => {
-    return (
-        <>
-            <Backdrop />
-            <AppContext.Consumer>
-                {({ showModal }) => <ModalComponent show={showModal}>
+class Modal extends React.Component {
+
+    render() {
+        const { children, show, close, withError } = this.props;
+
+        return (
+            <>
+                <Backdrop show={show} clicked={close} withError={withError} />
+                <ModalComponent show={show} withError={withError} onClick={withError ? close : null}>
                     {children}
                 </ModalComponent>}
-            </AppContext.Consumer>
-
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default Modal
