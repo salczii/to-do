@@ -6,8 +6,8 @@ const Settings = ({ context: { setTheme, darkTheme } }) => {
     console.log(darkTheme)
     return (
         <section className='settings'>
-            <p>set theme</p>
-            <Span onClick={setTheme} theme={darkTheme.toString()}></Span>
+            <p>set theme: <Span onClick={setTheme} theme={darkTheme.toString()}></Span></p>
+
         </section>
     )
 }

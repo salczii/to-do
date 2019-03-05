@@ -2,6 +2,7 @@ import React from 'react'
 import axios from '../../axios'
 import Spinner from './Spinner'
 import errorHandler from '../ErrorHandler'
+import FormWrapper from '../../styled-components/FormWrapper'
 
 class CreateTask extends React.Component {
 
@@ -67,7 +68,7 @@ class CreateTask extends React.Component {
         const { inputTaskValue, inputDateValue, checkedImportantValue, selectType, loading } = this.state
 
         let formPage = (
-            <>
+            <FormWrapper>
                 <form onSubmit={this.sendTaskHandler}>
                     < input
                         onChange={this.onInputTextChange}
@@ -98,9 +99,9 @@ class CreateTask extends React.Component {
                         <option value="school">school</option>
                         <option value="others">others</option>
                     </select>
+                    <button onClick={this.sendTaskHandler}>add task</button>
                 </form>
-                <button onClick={this.sendTaskHandler}>add task</button>
-            </>
+            </FormWrapper>
         )
         if (loading) {
             formPage = <Spinner />

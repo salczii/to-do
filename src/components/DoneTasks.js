@@ -1,6 +1,7 @@
 import React from 'react'
 import { withAppContext } from './withAppContext'
 import Task from './Task'
+import SearchBar from './Layout/Toolbar/SearchBar'
 
 const DoneTasks = ({ context: { tasks } }) => {
 
@@ -11,15 +12,21 @@ const DoneTasks = ({ context: { tasks } }) => {
             .filter(task => task.active === true)
             .map(task => <Task
                 key={task.id + task.type}
-                task={task} />
+                task={task}
+                color={task.color} />
             )
     }
 
     return (
         <section>
-            <h1>Done Tasks</h1>
-            {doneTasks}
+
+            <div className="tasks_Wrapper--element">
+                <SearchBar />
+                <h1>Done Tasks</h1>
+                {doneTasks}
+            </div>
         </section>
+
     )
 }
 

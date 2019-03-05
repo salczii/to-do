@@ -12,7 +12,7 @@ const Task = ({ task, color }) => {
     task.content.length > 20 ? content = task.content.slice(0, 20) + '...' : content = task.content
 
     return (
-        <TaskElement important={task.important.toString()} color={color}>
+        <TaskElement important={task.important.toString()}>
             <p>{content}</p>
             <p>{task.date}</p>
             <p>{task.type}</p>
